@@ -6,27 +6,38 @@ import java.util.List;
 import com.exercices.restaurant2.Table;
 
 public class Restaurant {
-	private List<Table> tables = new ArrayList<>();
-
+	
+	
+	
+	private Tables tables = new Tables();
+	static Translator translator;
+	static{
+		 translator = new Translator() {
+			@Override
+			public Command translate(String commandName) {
+				String[] personCommand = commandName.split(":");
+				return new Command(new Person(personCommand[0]),personCommand[1]);
+				
+			}
+		};
+	}
+	
+	
 	public int initTable(int i) {
-		Table table = new Table(i);
-		tables.add(table);
-		return table.tableId;
+		return tables.addTable(new Table(i));
 	}
 	
 	public void customerSays(int tableId, String customerCommand) {
-		List<Command> customerCommands = new ArrayList<Command>();
-		String[] personCommand = customerCommand.split(":");
-		Command command = new Command(personCommand[1]);
-		customerCommands.add(command);
-		if(tables.get(0).commands.containsKey(personCommand[0])){
-			tables.get(0).commands.get(personCommand[0]).add(command);
-		}
-		else tables.get(0).commands.put(personCommand[0],customerCommands);
+		tables.addCommandToTable(translator.translate(customerCommand), tableId);
 	}
 	
 	public String createOrder(int tableId) {
+		tables.creatOrder()
 		String order = OrderFactory.buildOrder(tables.get(0).commands,tables.get(0).numberOfPersons);
 		return order;
+	}
+	public Table getTableAyantId(int tableId){
+		return null;
+		
 	}
 }

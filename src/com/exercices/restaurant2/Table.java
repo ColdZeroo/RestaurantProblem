@@ -1,15 +1,14 @@
 package com.exercices.restaurant2;
 
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class Table {
 
-	final int tableId;
-	final int numberOfPersons;
-	private final Map<String,List<Command>> commands = new LinkedHashMap<String,List<Command>>();
+	private final int tableId;
+	private final int numberOfPersons;
+	private List<Command> commands = new ArrayList<Command>();
 
 	
 	public Table(int numberOfPersons) {
@@ -17,6 +16,11 @@ public class Table {
 		this.numberOfPersons = numberOfPersons;
 	}
 
+	public void addCommandToTable(Command command){
+		this.commands.add(command);
+	}
 	
-	
+	protected int getTableId(){
+		return this.tableId;
+	}
 }
