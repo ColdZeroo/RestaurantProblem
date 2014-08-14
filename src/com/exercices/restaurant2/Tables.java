@@ -26,4 +26,9 @@ public class Tables {
 		}
 		return null;
 	}
+
+	public String creatOrder(int tableId) {
+		Table table = this.getTableAyantId(tableId);
+		return table.test();
+	}
 }

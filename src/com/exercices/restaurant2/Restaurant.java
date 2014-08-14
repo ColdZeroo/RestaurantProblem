@@ -32,12 +32,8 @@ public class Restaurant {
 	}
 	
 	public String createOrder(int tableId) {
-		tables.creatOrder()
-		String order = OrderFactory.buildOrder(tables.get(0).commands,tables.get(0).numberOfPersons);
+		String order = tables.creatOrder(tableId);
+		//String order = OrderFactory.buildOrder(tables.get(0).commands,tables.get(0).numberOfPersons);
 		return order;
-	}
-	public Table getTableAyantId(int tableId){
-		return null;
-		
 	}
 }

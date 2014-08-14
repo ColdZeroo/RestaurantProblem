@@ -23,4 +23,21 @@ public class Table {
 	protected int getTableId(){
 		return this.tableId;
 	}
+	public String test(){
+		StringBuffer order = new StringBuffer();
+		for(Command command: this.commands){
+			if(command.isSameCommand()){
+				
+			}
+			else if(command.isForCommand()){
+				
+			}
+			else{
+				order.append(command.addCommandToOrder());
+				order.substring(order.lastIndexOf(","));
+			}
+			
+		}
+		return order.toString();
+	}
 }
