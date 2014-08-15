@@ -1,11 +1,8 @@
 package com.exercices.restaurant2;
 
-
 import com.exercices.restaurant2.Table;
 
 public class Restaurant {
-	
-	
 	
 	private Tables tables = new Tables();
 	static Translator translator;

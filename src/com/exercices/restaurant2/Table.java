@@ -33,6 +33,7 @@ public class Table {
 	protected int getTableId(){
 		return this.tableId;
 	}
+	
 	public String constructOrder(){
 		StringBuffer order = new StringBuffer();
 		int forCommands = 0;
