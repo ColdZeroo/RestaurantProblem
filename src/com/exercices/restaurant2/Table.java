@@ -16,28 +16,23 @@ public class Table {
 		this.numberOfPersons = numberOfPersons;
 	}
 
-	public void addCommandToTable(Command command){
+	public void addCommand(Command command){
+		if(command.isSameCommand()){
+			commands.get(commands.size()-1).copyCommand(command);
+		}
 		this.commands.add(command);
 	}
 	
 	protected int getTableId(){
 		return this.tableId;
 	}
-	public String test(){
+	public String constructOrder(){
 		StringBuffer order = new StringBuffer();
 		for(Command command: this.commands){
-			if(command.isSameCommand()){
-				
-			}
-			else if(command.isForCommand()){
-				
-			}
-			else{
 				order.append(command.addCommandToOrder());
-				order.substring(order.lastIndexOf(","));
-			}
-			
 		}
-		return order.toString();
+		order = order.deleteCharAt(order.lastIndexOf(","));
+		return order.substring(1);
 	}
+	
 }

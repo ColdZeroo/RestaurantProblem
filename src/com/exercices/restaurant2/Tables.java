@@ -8,15 +8,13 @@ public class Tables {
 	private List<Table> tables = new ArrayList<>();
 
 	public int addTable(Table table) {
-
+		tables.add(table);
 		return table.getTableId();
 	}
 
 	public void addCommandToTable(Command command, int tableId) {
 		Table table = getTableAyantId(tableId);
-		table.addCommandToTable(command);
-		tables.add(table);
-            
+		table.addCommand(command);
 	}
 
 	private Table getTableAyantId(int tableId) {
@@ -29,6 +27,6 @@ public class Tables {
 
 	public String creatOrder(int tableId) {
 		Table table = this.getTableAyantId(tableId);
-		return table.test();
+		return table.constructOrder();
 	}
 }

@@ -2,7 +2,7 @@ package com.exercices.restaurant2;
 
 public class Command {
 	
-	private final String commandMeal;
+	private String commandMeal;
 	private final Person commander;
 	
 	public Command(Person commander,String command){
@@ -37,5 +37,8 @@ public class Command {
 		order.append(",");
 		return order.toString();
 	}
-	
+
+	public void copyCommand(Command sameCommand){
+			sameCommand.commandMeal = this.commandMeal;
+	}
 }
