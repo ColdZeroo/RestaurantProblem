@@ -1,7 +1,5 @@
 package com.exercices.restaurant2;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import com.exercices.restaurant2.Table;
 
@@ -32,12 +30,7 @@ public class Restaurant {
 	}
 	
 	public String createOrder(int tableId) {
-		tables.creatOrder()
-		String order = OrderFactory.buildOrder(tables.get(0).commands,tables.get(0).numberOfPersons);
+		String order = tables.creatOrder(tableId);
 		return order;
-	}
-	public Table getTableAyantId(int tableId){
-		return null;
-		
 	}
 }

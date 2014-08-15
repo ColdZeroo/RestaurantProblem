@@ -7,4 +7,10 @@ public class Person {
 	public Person(String name){
 		this.name=name;
 	}
+	
+	public boolean equals(Person person){
+		if(this.name.equalsIgnoreCase(person.name))
+			return true;
+		else return false;
+	}
 }

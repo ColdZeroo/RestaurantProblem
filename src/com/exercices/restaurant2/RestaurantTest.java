@@ -53,7 +53,7 @@ public class RestaurantTest {
         restaurant.customerSays(tableId, "John: Chips");
         assertEquals("MISSING 1 for Fish for 2", restaurant.createOrder(tableId));
         restaurant.customerSays(tableId, "John: Fish for 2");
-        assertEquals("Fish for 2, Soup, Chips, Fish for 2", restaurant.createOrder(tableId));
+        assertEquals("Soup, Fish for 2, Chips, Fish for 2", restaurant.createOrder(tableId));
     }
 
     @Test
@@ -67,7 +67,7 @@ public class RestaurantTest {
         restaurant.customerSays(tableId, "John: Fish for 3");
         assertEquals("MISSING 1 for Fish for 3", restaurant.createOrder(tableId));
         restaurant.customerSays(tableId, "Jim: Fish for 3");
-        assertEquals("Fish for 3, Fish for 3, Chips, Fish for 3", restaurant.createOrder(tableId));
+        assertEquals("Fish for 3, Chips, Fish for 3, Fish for 3", restaurant.createOrder(tableId));
     }
 
     @Test
@@ -82,7 +82,7 @@ public class RestaurantTest {
         assertEquals("MISSING 2 for Fish for 3", restaurant.createOrder(tableId));
         restaurant.customerSays(tableId, "John: Fish for 3");
         restaurant.customerSays(tableId, "Jim: Fish for 3");
-        assertEquals("Fish for 3, Fish for 3, Chips, Fish for 3", restaurant.createOrder(tableId));
+        assertEquals("Fish for 3, Chips, Fish for 3, Fish for 3", restaurant.createOrder(tableId));
     }
 
 }
